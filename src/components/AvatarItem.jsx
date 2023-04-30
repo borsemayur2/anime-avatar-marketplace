@@ -3,21 +3,11 @@ import {
   ShoppingFilled,
   LikeFilled,
   HeartFilled,
-  HeartOutlined,
-  WindowsFilled,
   AppleFilled,
 } from "@ant-design/icons";
 import { Button, Card, Rate } from "antd";
 
-function AvatarItem({
-  avatar,
-  selectedAvatar,
-  setSelectedAvatar,
-  // isFavorite,
-  // onClickFavorite,
-  // onClickDelete,
-  // editUser,
-}) {
+function AvatarItem({ avatar, selectedAvatar, setSelectedAvatar }) {
   console.log("avatar", setSelectedAvatar, selectedAvatar);
   return (
     <>
@@ -28,34 +18,16 @@ function AvatarItem({
           <img
             height={250}
             width={250}
-            // src={`https://api.dicebear.com/5.x/avataaars/svg?seed=${user.username}`}
-            // src={getImageUrl(avatar.imageName)}
-            // src={avatar.image}
             src={`public/avatarImages/${avatar.imageName}`}
-            // alt={`${avatar.username}-avatar`}
-            // style={{ background: "rgb(245,245,245)", paddingTop: 10 }}
           />
         }
         actions={[
-          // <ShoppingCartOutlined key="edit" title="Add to cart" />,
-
-          // <ShoppingFilled
-          //   key="delete"
-          //   title="Buy now"
-
-          //   // onClick={() => onClickDelete(user.id)}
-          // />,
           <Button key="addToCart">
             <ShoppingCartOutlined key="edit" title="Add to cart" />
             Add to cart
           </Button>,
           <Button key="buyNow" type="primary">
-            <ShoppingFilled
-              key="delete"
-              title="Buy now"
-
-              // onClick={() => onClickDelete(user.id)}
-            />
+            <ShoppingFilled key="delete" title="Buy now" />
             Buy now
           </Button>,
         ]}
@@ -71,18 +43,10 @@ function AvatarItem({
               }}
             >
               <p>{avatar.title}</p>
-              {true ? (
-                <HeartFilled
-                  style={{ color: "pink", marginTop: 24 }}
-                  key="favorite-yes"
-                  // onClick={() => onClickFavorite(user.id)}
-                />
-              ) : (
-                <HeartOutlined
-                  key="favorite-no"
-                  // onClick={() => onClickFavorite(user.id)}
-                />
-              )}
+              <HeartFilled
+                style={{ color: "pink", marginTop: 24 }}
+                key="favorite-yes"
+              />
             </div>
           }
           description={
@@ -95,12 +59,7 @@ function AvatarItem({
                   fontSize: 16,
                 }}
               >
-                <Rate
-                  // style={{ fontSize: 24 }}
-                  disabled
-                  defaultValue={avatar.rating}
-                />
-                {/* <span style={{ marginLeft: 10 }}> {avatar.rating}</span> */}
+                <Rate disabled defaultValue={avatar.rating} />
                 <p
                   style={{ display: "flex", marginTop: -10, marginBottom: -10 }}
                 >
@@ -125,14 +84,11 @@ function AvatarItem({
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    // flex: 1,
                   }}
                 >
-                  {/* <WindowsFilled /> */}
                   <AppleFilled />
                 </span>
               </div>
-
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
                 laborum perspiciatis corrupti, nulla autem quos sapiente ea
