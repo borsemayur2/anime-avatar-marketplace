@@ -18,7 +18,7 @@ function AvatarItem({ avatar, selectedAvatar, setSelectedAvatar }) {
           <img
             height={250}
             width={250}
-            src={`public/avatarImages/${avatar.imageName}`}
+            src={`/avatarImages/${avatar.imageName}`}
           />
         }
         actions={[

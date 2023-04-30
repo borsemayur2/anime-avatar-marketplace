@@ -9,7 +9,6 @@ import {
 } from "@ant-design/icons";
 
 function AvatarDetails({ selectedAvatar, setSelectedAvatar }) {
-  console.log("selectedAvatar", selectedAvatar);
   return (
     <div>
       <ArrowLeftOutlined
@@ -21,7 +20,7 @@ function AvatarDetails({ selectedAvatar, setSelectedAvatar }) {
           <Image
             height={500}
             width={500}
-            src={`public/avatarImages/${selectedAvatar.imageName}`}
+            src={`/avatarImages/${selectedAvatar.imageName}`}
             title={selectedAvatar.title}
           />
           <div
